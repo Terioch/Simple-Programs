@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Minimum Change</title>
+  </head>
+  <body>
+    <!-- Program that outputs the minimum number of coins
+      required to make change based on an amount of money -->
+    <script>
+      function calculateChange() {
+        let money = (prompt("Cost: ")) * 100;
+        const quarter = 25, dime = 10, nickel = 5, penny = 1;
+        let coins = 0;
+
+        while (money > 0) {
+          if (money >= quarter) {
+            money -= quarter;
+            coins++;
+            console.log({money}, {coins});
+          }
+          else if (money >= dime) {
+            money -= dime;
+            coins++;
+            console.log({money}, {coins});
+          }
+          else if (money >= nickel) {
+            money -= nickel;
+            coins++;
+            console.log({money}, {coins});
+          } 
+          else {
+            money -= penny;
+            coins++;
+            console.log({money}, {coins});
+          }
+        }
+        return coins;
+      }
+      console.log(calculateChange());
+    </script>
+  </body>
+</html>
