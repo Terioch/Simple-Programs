@@ -16,22 +16,18 @@
           if (money >= quarter) {
             money -= quarter;
             coins++;
-            console.log({money}, {coins});
           }
           else if (money >= dime) {
             money -= dime;
             coins++;
-            console.log({money}, {coins});
           }
           else if (money >= nickel) {
             money -= nickel;
             coins++;
-            console.log({money}, {coins});
           } 
           else {
             money -= penny;
             coins++;
-            console.log({money}, {coins});
           }
         }
         return coins;
