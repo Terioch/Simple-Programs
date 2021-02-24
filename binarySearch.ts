@@ -3,7 +3,7 @@
 class BinarySearch {
   constructor() {
     console.log(this.iterativeSearch([0, 1, 3, 5, 6, 7], 7));
-    console.log(this.recursiveSearch([0, 2, 5, 5, 6, 7, 8, 8], 0));
+    console.log(this.recursiveSearch([1, 3, 5], 5));
   }
 
   // Iterative Binary Search
@@ -26,7 +26,7 @@ class BinarySearch {
 
   // Recursive Binary Search
   recursiveSearch(nums: Array<number>, target: number): number {
-    return this.recursiveBinarySearch([1, 3], 3, 0, nums.length - 1);
+    return this.recursiveBinarySearch([1, 3, 5], 5, 0, nums.length - 1);
   }
 
   recursiveBinarySearch(nums: Array<number>, target: number, low: number, high: number): number {
