@@ -10,17 +10,17 @@ class Fibonacci {
     if (n == 0 || n == 1) return n;
     else if (n == 2) return 1;
     
-    let prevTmp = 1;
-    let tmp = prevTmp;
-    let nextTmp: number;
+    let prev = 1;
+    let curr = prev;
+    let next: number;
 
     for (let i = 3; i <= n; ++i) {
-      nextTmp = tmp + prevTmp;
-      prevTmp = tmp;
-      tmp = nextTmp;
+      next = curr + prev;
+      prev = curr;
+      curr = next;
     }
 
-    return nextTmp;
+    return next;
   }
 
   // Recursive Fibonacci
