@@ -1,7 +1,7 @@
 // Program that finds the Nth term in the fibonacci sequence
 class Fibonacci {
   constructor() {
-    console.log(this.iterativeFib(77));
+    console.log(this.iterativeFib(7));
     console.log(this.recursiveFib(5));
   }
 
