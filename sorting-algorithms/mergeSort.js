@@ -1,4 +1,4 @@
-// Implement recursive merge sort
+// Implement merge sort recursively
 class MergeSort {
 	constructor(initialValues) {
 		this.nums = initialValues;
