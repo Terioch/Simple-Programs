@@ -2,7 +2,7 @@
 class MergeSort {
 	constructor(initialValues) {
 		this.nums = initialValues;
-		this.temp = new Array(this.nums.length);
+		this.temp = new Array(this.nums.length - 1);
 		this.mergeSort(0, this.nums.length - 1);
 		return this.nums;
 	}
@@ -41,7 +41,7 @@ class MergeSort {
 		}
 
 		// Push temp values onto original array
-		for (let i = 0; i <= total; i++) {
+		for (let i = 0; i < total; i++) {
 			this.nums[i + low] = this.temp[i];
 		}
 	}
