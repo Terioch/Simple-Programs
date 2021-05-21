@@ -20,7 +20,6 @@ class MergeSort {
 		let leftPointer = low;
 		let rightPointer = highMid;
 		let tempIdx = 0;
-		let total = high - low + 1;
 
 		// Use two pointer approach to merge values
 		while (leftPointer <= mid && rightPointer <= high) {
@@ -40,11 +39,11 @@ class MergeSort {
 			this.temp[tempIdx++] = this.nums[rightPointer++];
 		}
 
-		// Push temp values onto original array
-		for (let i = 0; i < total; i++) {
+		// Push temporary values onto original array
+		for (let i = 0; i <= high - low; i++) {
 			this.nums[i + low] = this.temp[i];
 		}
 	}
 }
 
-console.log(new MergeSort([5, 2, 3, 1]));
+console.log(new MergeSort([5, 8, 1, 4, 3, 7, 2, 9]));
