@@ -39,7 +39,7 @@ class MergeSort {
 			this.temp[tempIdx++] = this.nums[rightPointer++];
 		}
 
-		// Push temporary values onto original array
+		// Insert temporary values into original array
 		for (let i = 0; i <= high - low; i++) {
 			this.nums[low + i] = this.temp[i];
 		}
