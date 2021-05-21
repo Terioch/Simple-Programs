@@ -22,7 +22,7 @@ class MergeSort {
 		let tempIdx = 0;
 		let total = high - low + 1;
 
-		// Use two pointers to merge values
+		// Use two pointer approach to merge values
 		while (leftPointer <= mid && rightPointer <= high) {
 			if (this.nums[leftPointer] < this.nums[rightPointer]) {
 				this.temp[tempIdx++] = this.nums[leftPointer++];
