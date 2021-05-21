@@ -1,4 +1,4 @@
-// Implement Merge Sort
+// Implement recursive merge sort
 class MergeSort {
 	constructor(initialValues) {
 		this.nums = initialValues;
@@ -41,7 +41,7 @@ class MergeSort {
 
 		// Push temporary values onto original array
 		for (let i = 0; i <= high - low; i++) {
-			this.nums[i + low] = this.temp[i];
+			this.nums[low + i] = this.temp[i];
 		}
 	}
 }
