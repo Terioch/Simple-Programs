@@ -1,5 +1,5 @@
 // Implement merge sort recursively
-class MergeSort {
+class Merge {
 	constructor(initialValues) {
 		this.nums = initialValues;
 		this.temp = new Array(this.nums.length - 1);
@@ -46,4 +46,6 @@ class MergeSort {
 	}
 }
 
-console.log(new MergeSort([5, 8, 1, 4, 3, 7, 2, 9]));
+console.log(new Merge([5, 8, 1, 4, 3, 7, 2, 9]));
+
+export default Merge;
