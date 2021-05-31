@@ -1,4 +1,4 @@
-// Implement iterative bubble sort
+// Iterative bubble sort
 class Bubble {
 	constructor(nums) {
 		this.iterativeBubbleSort(nums);
