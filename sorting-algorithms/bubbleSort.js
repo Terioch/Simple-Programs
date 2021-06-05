@@ -12,7 +12,6 @@ class Bubble {
 			for (let j = 0; j < nums.length - i; j++) {
 				let current = nums[j];
 				let next = nums[j + 1];
-				console.log(current);
 
 				// Shift/bubble current value to the right
 				if (current > next) {
