@@ -47,5 +47,3 @@ class Merge {
 }
 
 console.log(new Merge([5, 8, 1, 4, 3, 7, 2, 9]));
-
-export default Merge;

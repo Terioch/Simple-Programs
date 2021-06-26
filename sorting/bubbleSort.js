@@ -5,7 +5,7 @@ class Bubble {
 		return nums;
 	}
 
-	iterativeBubbleSort = nums => {
+	iterativeBubbleSort = (nums) => {
 		for (let i = 0; i < nums.length; i++) {
 			let swapped = false;
 
@@ -29,5 +29,3 @@ class Bubble {
 }
 
 console.log(new Bubble([3, 6, 2, 9, 1, 4, 8]));
-
-export default Bubble;
