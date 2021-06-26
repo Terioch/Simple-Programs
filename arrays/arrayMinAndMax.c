@@ -6,7 +6,6 @@ int findMaxAndMin(void) {
   int len = sizeof(nums)/sizeof(nums[0]);
   int max = nums[0];
   int min = max;
-  printf("Array length: %i\n", len);
 
   for (int i = 0; i < len; i++) {
     if (nums[i] > max) {
