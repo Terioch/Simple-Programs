@@ -31,7 +31,7 @@ int findMaxAndMin(int *nums) {
       min = nums[i];
     }
   }
-  printf("Max: %max\nMin: %min");
+  printf("Max: %i\nMin: %i\n", max, min);
   return 0;
 }
 
