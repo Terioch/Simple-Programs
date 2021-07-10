@@ -15,22 +15,23 @@ class Quick {
 	// Calculate the pivot
 	findPivot(nums, low, high) {
 		const mid = nums.length / 2;
-		const trio = [low, mid, high];
+		const trio = [nums[low], nums[mid], nums[high]];
 		let swapped = true;
 
-		// Sort trio using bubble sort
+		// Sort trio using bubble sort and return the median
 		while (swapped) {
 			for (let i = 0; i < trio.length - 1; i++) {
 				if (trio[i] > trio[i + 1]) {
 					trio[i] = trio[i] + trio[i + 1];
 					trio[i + 1] = trio[i] - trio[i + 1];
 					trio[i] = trio[i] - trio[i + 1];
+					swapped = true;
 				} else {
 					swapped = false;
 				}
 			}
 		}
-		return trio[trio.length / 2];
+		return trio[Math.floor(trio.length / 2)];
 	}
 }
 
