@@ -8,30 +8,35 @@ class Quick {
 	quickSort(nums) {
 		let low = 0;
 		let high = nums.length - 1;
-		let pivot = this.findPivot(nums, low, high);
-		console.log(pivot);
+		this.partition(nums, low, high);
 	}
 
-	// Calculate the pivot
-	findPivot(nums, low, high) {
-		const mid = nums.length / 2;
-		const trio = [nums[low], nums[mid], nums[high]];
-		let swapped = true;
+	partition(nums, low, high) {
+		const pivot = nums[low];
+		let i = low;
+		let j = high;
 
-		// Sort trio using bubble sort and return the median
-		while (swapped) {
-			for (let i = 0; i < trio.length - 1; i++) {
-				if (trio[i] > trio[i + 1]) {
-					trio[i] = trio[i] + trio[i + 1];
-					trio[i + 1] = trio[i] - trio[i + 1];
-					trio[i] = trio[i] - trio[i + 1];
-					swapped = true;
-				} else {
-					swapped = false;
-				}
+		// Iterate until we have 2 swappable elements then repeat
+		while (i < j) {
+			do {
+				i++;
+			} while (nums[i] <= pivot);
+
+			do {
+				j--;
+			} while (nums[j] > pivot);
+
+			if (i < j) {
+				this.swap(nums, i, j);
 			}
 		}
-		return trio[Math.floor(trio.length / 2)];
+	}
+
+	// Swap values at i and j
+	swap(nums, i, j) {
+		nums[i] = nums[i] + nums[j];
+		nums[j] = nums[i] - nums[j];
+		nums[i] = nums[i] - nums[j];
 	}
 }
 
