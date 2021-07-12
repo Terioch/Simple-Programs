@@ -1,14 +1,18 @@
 // Recursive Quick Sort
 class Quick {
 	constructor(nums) {
-		this.quickSort(nums);
+		const low = 0;
+		const high = nums.length - 1;
+		this.quickSort(nums, low, high);
 		return nums;
 	}
 
-	quickSort(nums) {
-		let low = 0;
-		let high = nums.length - 1;
-		this.partition(nums, low, high);
+	quickSort(nums, low, high) {
+		if (low < high) {
+			const pivotIdx = this.partition(nums, low, high);
+			this.quickSort(nums, low, pivotIdx);
+			this.quickSort(nums, pivotIdx + 1, high);
+		}
 	}
 
 	partition(nums, low, high) {
@@ -30,14 +34,16 @@ class Quick {
 				this.swap(nums, i, j);
 			}
 		}
+		this.swap(nums, low, j); // Swap current pivot with new pivot
+		return j;
 	}
 
 	// Swap values at i and j
-	swap(nums, i, j) {
-		nums[i] = nums[i] + nums[j];
-		nums[j] = nums[i] - nums[j];
-		nums[i] = nums[i] - nums[j];
+	swap(nums, x, y) {
+		nums[x] = nums[x] + nums[y];
+		nums[y] = nums[x] - nums[y];
+		nums[x] = nums[x] - nums[y];
 	}
 }
 
-console.log(new Quick([4, 6, 7, 10, 10, 12, 13, 14]));
+console.log(new Quick([2, 3, 5, 6, 7]));
