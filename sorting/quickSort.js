@@ -30,6 +30,8 @@ class Quick {
 				j--;
 			} while (nums[j] > pivot);
 
+			//console.log(nums[i], nums[j]);
+
 			if (i < j) {
 				this.swap(nums, i, j);
 			}
@@ -43,7 +45,8 @@ class Quick {
 		nums[x] = nums[x] + nums[y];
 		nums[y] = nums[x] - nums[y];
 		nums[x] = nums[x] - nums[y];
+		console.log(nums);
 	}
 }
 
-console.log(new Quick([2, 3, 5, 6, 7]));
+console.log(new Quick([2, 5, 3, 1, 7]));
