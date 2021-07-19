@@ -1,4 +1,5 @@
 // Return the indices of 2 integers in an array with a sum equal to the target input
+import java.util.HashMap;
 
 public class targetSum {
   public static void computeIndicies() {
@@ -10,10 +11,26 @@ public class targetSum {
   }
 
   public static int[] nestedIterativeMethod(int[] nums, int target) {
-    return nums;
+    for (int i = 0; i < nums.length - 1; i++) {
+      for (int j = i + 1; j < nums.length; j++) {
+        if (nums[i] + nums[j] == target) {
+          return new int[] {i, j};
+        }
+      }
+    }
+    throw new IllegalArgumentException("No Solution");
   }
   
   public static int[] hashingMethod(int[] nums, int target) {
-    return nums;
+    HashMap<Integer, Integer> complements = new HashMap<>();
+    
+    for (int i = 0; i < nums.length; i++) {
+      int complement = target - nums[i];
+      if (complements.containsValue(complement)) {
+        return new int[] {complements.get(complement), i};
+      }
+      complements.put(i, nums[i]);
+    }
+    throw new IllegalArgumentException("No Solution");
   }
 }
